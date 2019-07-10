@@ -1,0 +1,30 @@
+﻿@model IEnumerable<MVCHomeWork.Models.ViewModels.TransactionViewModels>
+
+@{ 
+    Layout = null;
+}
+
+<div class="row">
+    <div class="col-md-10">
+        <table class="table table-bordered">
+            <tr>
+                <td>#</td>
+                <td>類別</td>
+                <td>日期</td>
+                <td>金額</td>
+            </tr>
+            @{
+                int RecordCount = 1;
+                foreach (var tmpData in Model)
+                {
+                    <tr>
+                        <td>@(RecordCount++)</td>
+                        <td>@(tmpData.Category)</td>
+                        <td>@(tmpData.Date.ToString("yyyy-MM-dd"))</td>
+                        <td>@(tmpData.Amount.ToString("N0"))</td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>
