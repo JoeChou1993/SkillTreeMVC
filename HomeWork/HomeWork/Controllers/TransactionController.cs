@@ -47,9 +47,9 @@ namespace MVCHomeWork.Controllers
 
         private string GetTransactionCategoryDesc(int CategoryCode)
         {
-            switch (CategoryCode.ToString())
+            switch (CategoryCode)
             {
-                case "0":
+                case 1:
                     return "支出";
                 default:
                     return "收入";
